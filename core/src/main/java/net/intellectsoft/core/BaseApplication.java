@@ -32,9 +32,7 @@ public abstract class BaseApplication extends Application {
     }
 
     protected void initTimber() {
-        if (BuildConfig.DEBUG) {
-            Timber.plant(new Timber.DebugTree());
-        }
+        Timber.plant(new Timber.DebugTree());
     }
 
 }
