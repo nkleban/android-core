@@ -5,21 +5,26 @@ import android.support.annotation.StringRes;
 import net.intellectsoft.core.R;
 import net.intellectsoft.core.utils.AndroidUtils;
 
+import java.lang.ref.SoftReference;
+
 import rx.Observable;
 import rx.Subscription;
 
 public abstract class BaseLoaderPresenter<D, V extends BaseLoaderMvpView<D>> extends BasePresenter<V> {
 
-    protected D data;
+    protected SoftReference<D> dataRef;
 
     public void requestData() {
         requestData(true);
     }
 
     public void requestData(boolean forceUpdate) {
-        if (!forceUpdate && data != null) {
-            onDataReceived(data);
-            return;
+        if (!forceUpdate && dataRef != null) {
+            D data = dataRef.get();
+            if (data != null) {
+                onDataReceived(data);
+                return;
+            }
         }
 
         if (!AndroidUtils.isNetworkConnected()) {
@@ -28,15 +33,15 @@ public abstract class BaseLoaderPresenter<D, V extends BaseLoaderMvpView<D>> ext
         }
 
         mMvpView.showLoading();
-        Subscription subscription = getData()
+        Subscription subscription = getDataObservable()
                 .subscribe(data -> {
-                    this.data = data;
+                    this.dataRef = new SoftReference<>(data);
                     onDataReceived(data);
                 }, this::onError);
         mSubscriptions.add(subscription);
     }
 
-    protected abstract Observable<D> getData();
+    protected abstract Observable<D> getDataObservable();
 
     protected void onDataReceived(D data) {
         mMvpView.setData(data);

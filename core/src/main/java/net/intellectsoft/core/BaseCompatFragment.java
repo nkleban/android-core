@@ -21,7 +21,9 @@ public abstract class BaseCompatFragment extends Fragment {
         //workaround for https://code.google.com/p/android/issues/detail?id=67482
         if (savedInstanceState != null) {
             if (savedInstanceState.getBoolean("isHidden", false)) {
-                getFragmentManager().beginTransaction().hide(this).commit();
+                getFragmentManager().beginTransaction()
+                        .hide(this)
+                        .commit();
             }
         }
     }
