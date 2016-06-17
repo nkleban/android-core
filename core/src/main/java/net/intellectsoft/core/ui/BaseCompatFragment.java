@@ -1,4 +1,4 @@
-package net.intellectsoft.core;
+package net.intellectsoft.core.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
