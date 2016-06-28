@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".mvp_load.MVPLoadActivity"
+            android:name=".mvp.MvpLoadActivity"
             android:label="MVP Load"/>
     </application>
 

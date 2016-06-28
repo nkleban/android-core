@@ -1,4 +1,4 @@
-package net.intellectsoft.sample.mvp_load;
+package net.intellectsoft.sample.mvp;
 
 import net.intellectsoft.core.mvp.BaseLoaderMvpView;
 import net.intellectsoft.core.mvp.BaseLoaderPresenter;
@@ -10,10 +10,8 @@ import java.util.List;
 
 import rx.Observable;
 
-/**
- * Created by Raman Branavitski on 6/17/16.
- */
-public class MVPLoadPresenter
+
+public class MvpLoadPresenter
         extends BaseLoaderPresenter<List<MockDataObject>, BaseLoaderMvpView<List<MockDataObject>>> {
 
     @Override

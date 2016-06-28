@@ -1,4 +1,4 @@
-package net.intellectsoft.sample.mvp_load;
+package net.intellectsoft.sample.mvp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,28 +23,26 @@ import java.util.List;
 
 import butterknife.BindView;
 
-/**
- * Created by Raman Branavitski on 6/17/16.
- */
-public class MVPLoadActivity extends BaseAppCompatActivity
+
+public class MvpLoadActivity extends BaseAppCompatActivity
         implements SwipeRefreshLayout.OnRefreshListener, BaseLoaderMvpView<List<MockDataObject>> {
 
     @BindView(R.id.swipe_refresh) public SwipeToRefreshLayout swipeRefreshLayout;
     @BindView(R.id.recycler_view) public EmptyRecyclerView recyclerView;
     @BindView(R.id.empty_view) public View emptyView;
 
-    private MVPLoadPresenter presenter;
+    private MvpLoadPresenter presenter;
     private RecyclerViewAdapter adapter;
 
     public static void launch(Context context) {
-        context.startActivity(new Intent(context, MVPLoadActivity.class));
+        context.startActivity(new Intent(context, MvpLoadActivity.class));
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp_load);
-        presenter = new MVPLoadPresenter();
+        presenter = new MvpLoadPresenter();
         presenter.attachView(this);
 
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);

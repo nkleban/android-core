@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import net.intellectsoft.core.ui.BaseAppCompatActivity;
-import net.intellectsoft.sample.mvp_load.MVPLoadActivity;
+import net.intellectsoft.sample.mvp.MvpLoadActivity;
 
 import butterknife.OnClick;
 
@@ -18,6 +18,7 @@ public class MainActivity extends BaseAppCompatActivity {
 
     @OnClick(R.id.btn_mvp_load)
     public void openMvpLoadActivity(View v) {
-        MVPLoadActivity.launch(this);
+        MvpLoadActivity.launch(this);
     }
+
 }

@@ -6,9 +6,7 @@ import android.view.ViewGroup;
 
 import net.intellectsoft.core.ui.adapter.BaseRecyclerAdapter;
 
-/**
- * Created by Raman Branavitski on 6/17/16.
- */
+
 public class RecyclerViewAdapter extends BaseRecyclerAdapter<MockDataObject, ViewHolder> {
 
     public RecyclerViewAdapter(Context context) {
