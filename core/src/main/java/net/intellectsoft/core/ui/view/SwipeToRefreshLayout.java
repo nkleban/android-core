@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 
 /**
  * Workaround for https://code.google.com/p/android/issues/detail?id=77712
- * Still exists in Support Library 24.0.0
+ * Still exists in Support Library 24.0.0 and will be fixed in 24.1.0
  */
 public class SwipeToRefreshLayout extends SwipeRefreshLayout {
 
