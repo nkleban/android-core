@@ -1,4 +1,4 @@
-package net.intellectsoft.core.ui.view;
+package net.intellectsoft.core.mvp.presentation.ui.view;
 
 import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;

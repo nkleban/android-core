@@ -1,4 +1,4 @@
-package net.intellectsoft.core.ui;
+package net.intellectsoft.core.mvp.presentation.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,4 +1,4 @@
-package net.intellectsoft.core.ui;
+package net.intellectsoft.core.mvp.presentation.ui;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;

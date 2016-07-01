@@ -1,4 +1,4 @@
-package net.intellectsoft.core.mvp;
+package net.intellectsoft.core.mvp.presentation;
 
 public interface Presenter<V extends MvpView> {
 

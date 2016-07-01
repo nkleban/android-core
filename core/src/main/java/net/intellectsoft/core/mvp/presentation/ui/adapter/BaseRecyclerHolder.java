@@ -1,4 +1,4 @@
-package net.intellectsoft.core.ui.adapter;
+package net.intellectsoft.core.mvp.presentation.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
