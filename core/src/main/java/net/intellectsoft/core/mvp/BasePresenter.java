@@ -4,26 +4,26 @@ import rx.subscriptions.CompositeSubscription;
 
 public abstract class BasePresenter<V extends MvpView> implements Presenter<V> {
 
-    protected final CompositeSubscription mSubscriptions = new CompositeSubscription();
-    protected V mMvpView;
+    protected final CompositeSubscription subscriptions = new CompositeSubscription();
+    protected V mvpView;
 
     @Override
     public void attachView(V mvpView) {
-        mMvpView = mvpView;
+        this.mvpView = mvpView;
     }
 
     @Override
     public void detachView() {
-        mMvpView = null;
-        mSubscriptions.clear();
+        mvpView = null;
+        subscriptions.clear();
     }
 
     public boolean isViewAttached() {
-        return mMvpView != null;
+        return mvpView != null;
     }
 
     public V getMvpView() {
-        return mMvpView;
+        return mvpView;
     }
 
     public void checkViewAttached() {

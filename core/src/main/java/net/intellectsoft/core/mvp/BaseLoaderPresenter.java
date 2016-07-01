@@ -28,30 +28,30 @@ public abstract class BaseLoaderPresenter<D, V extends BaseLoaderMvpView<D>> ext
         }
 
         if (!AndroidUtils.isNetworkConnected()) {
-            mMvpView.showError(R.string.connection_error);
+            mvpView.showError(R.string.connection_error);
             return;
         }
 
-        mMvpView.showLoading();
+        mvpView.showLoading();
         Subscription subscription = getDataObservable()
                 .subscribe(data -> {
                     this.dataRef = new SoftReference<>(data);
                     onDataReceived(data);
                 }, this::onError);
-        mSubscriptions.add(subscription);
+        subscriptions.add(subscription);
     }
 
     protected abstract Observable<D> getDataObservable();
 
     protected void onDataReceived(D data) {
-        mMvpView.setData(data);
-        mMvpView.hideLoading();
-        mMvpView.showContent();
+        mvpView.setData(data);
+        mvpView.hideLoading();
+        mvpView.showContent();
     }
 
     protected void onError(Throwable throwable) {
-        mMvpView.hideLoading();
-        mMvpView.showError(getErrorMessageRes(throwable));
+        mvpView.hideLoading();
+        mvpView.showError(getErrorMessageRes(throwable));
     }
 
     @StringRes
